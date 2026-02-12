@@ -1,0 +1,126 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy import stats
+from google.colab import files
+
+uploaded = files.upload()
+file_name = list(uploaded.keys())[0]
+df = pd.read_excel(file_name)
+
+COL_DISEASE = "Disease Group"
+COL_MANUSCRIPT = "Manuscript Sample Size"
+COL_SRA = "SRA Sample Size"
+
+def to_numeric_series(s):
+    return pd.to_numeric(
+        s.astype(str)
+         .str.replace(",", "", regex=False)
+         .str.strip()
+         .replace({"": np.nan, "nan": np.nan, "None": np.nan}),
+        errors="coerce"
+    )
+
+df = df.copy()
+df[COL_MANUSCRIPT] = to_numeric_series(df[COL_MANUSCRIPT])
+df[COL_SRA] = to_numeric_series(df[COL_SRA])
+
+df_f = df.dropna(subset=[COL_DISEASE, COL_MANUSCRIPT, COL_SRA]).copy()
+
+MIN_N = 25
+counts = df_f[COL_DISEASE].value_counts()
+keep_diseases = counts[counts >= MIN_N].index
+df_f = df_f[df_f[COL_DISEASE].isin(keep_diseases)].copy()
+
+df_long = df_f.melt(
+    id_vars=[COL_DISEASE],
+    value_vars=[COL_SRA, COL_MANUSCRIPT],
+    var_name="Source",
+    value_name="Sample Size"
+)
+
+df_long["Source"] = df_long["Source"].map({
+    COL_SRA: "SRA",
+    COL_MANUSCRIPT: "Manuscript"
+})
+
+disease_order = (
+    df_f.groupby(COL_DISEASE)[COL_MANUSCRIPT]
+        .median()
+        .sort_values()
+        .index
+        .tolist()
+)
+
+rows = []
+for disease in disease_order:
+    sub = df_f[df_f[COL_DISEASE] == disease]
+    x = sub[COL_MANUSCRIPT].values
+    y = sub[COL_SRA].values
+    tstat, pval = stats.ttest_rel(y, x)
+    rows.append({
+        "Disease Group": disease,
+        "n (paired)": len(sub),
+        "Mean Manuscript": float(np.mean(x)),
+        "Mean SRA": float(np.mean(y)),
+        "Mean Diff (SRA - Manuscript)": float(np.mean(y - x)),
+        "t-stat": float(tstat),
+        "p-value": float(pval)
+    })
+
+ttest_table = pd.DataFrame(rows).sort_values("p-value").reset_index(drop=True)
+ttest_table.to_csv("paired_ttest_by_disease.csv", index=False)
+
+sns.set(style="white", context="talk")
+
+fig_width = max(10, 1.0 * len(disease_order))
+fig, ax = plt.subplots(figsize=(fig_width, 6))
+
+sns.boxplot(
+    data=df_long,
+    x=COL_DISEASE,
+    y="Sample Size",
+    hue="Source",
+    order=disease_order,
+    palette=["#BFBFBF", "#E0E0E0"],
+    dodge=True,
+    showfliers=False,
+    ax=ax
+)
+
+sns.stripplot(
+    data=df_long,
+    x=COL_DISEASE,
+    y="Sample Size",
+    hue="Source",
+    order=disease_order,
+    dodge=True,
+    jitter=0.22,
+    alpha=0.55,
+    size=5,
+    palette=["black", "black"],
+    ax=ax
+)
+
+ax.set_ylim(0, 900)
+ax.set_xlabel("")
+ax.set_ylabel("Sample Size")
+ax.tick_params(axis="x", rotation=90)
+sns.despine(ax=ax)
+
+handles, labels = ax.get_legend_handles_labels()
+ax.legend(handles[:2], labels[:2], frameon=False, title="")
+
+plt.tight_layout()
+plt.show()
+
+pdf_name = "jitter_boxplot_by_disease.pdf"
+png_name = "jitter_boxplot_by_disease.png"
+
+fig.savefig(pdf_name, bbox_inches="tight")
+fig.savefig(png_name, dpi=300, bbox_inches="tight")
+
+files.download(pdf_name)
+files.download(png_name)
+files.download("paired_ttest_by_disease.csv")
