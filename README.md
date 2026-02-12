@@ -6,8 +6,8 @@ Code for Density Plot Generation (Fig. 2A) can be found in the **Density Plot** 
 
 Code for Inter-Rater Reliability Dataset to extract 15 random studies can be found in the **IRR Dataset** file
 
-Code for MMC Dataset Host Extraction can be found in the **Host Code** file
+Code for MMC Dataset Host Extraction can be found in the **MMC Host** file
 
-Code for Jitter Boxplots and Paired T-Tests (Fig. 2B) can be found in the **Boxplots and T-Test** file
+Code for Jitter Boxplots and Paired T-Tests (Fig. 2B) can be found in the **Boxplots and T-Tests** file
 
 Code for the Variance Test (Fig. 2B) can be found in the **Variance Test** file
