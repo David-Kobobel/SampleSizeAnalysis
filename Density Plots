@@ -1,0 +1,111 @@
+from google.colab import files
+uploaded = files.upload()
+
+!pip -q install seaborn
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+from matplotlib.lines import Line2D
+
+sns.set_theme(context="paper", style="whitegrid")
+
+FILENAME = list(uploaded.keys())[0]
+df = pd.read_csv(FILENAME, encoding='latin1')
+
+df = df.rename(columns={
+    'Disease Group': 'DiseaseGroup',
+    'Disease group': 'DiseaseGroup',
+    'Sample Size': 'ManuscriptSampleSize',
+    'Manuscript Sample Size': 'ManuscriptSampleSize',
+    'SRA Sample Size': 'SRASampleSize',
+    'SRA sample size': 'SRASampleSize',
+})
+
+target_groups = [
+    "Respiratory","Cancer","Infectious","Metabolic","Gastrointestinal","STI","Reproductive",
+    "Skin","Autoimmune","Oral","Cardiovascular","Neurodegenerative","Mental Health",
+    "Immune Complications","Liver","Gynecological","Ophthalmological","Renal","Neurological",
+    "Endocrine","Genetic","Anatomical"
+]
+df = df[df['DiseaseGroup'].isin(target_groups)].copy()
+
+for col in ['ManuscriptSampleSize', 'SRASampleSize', 'NumExperiments']:
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+
+df = df.dropna(subset=['ManuscriptSampleSize', 'SRASampleSize']).copy()
+
+valid_mask = (
+    ((df['ManuscriptSampleSize'] > 0) | (df['SRASampleSize'] > 0))
+)
+df = df[valid_mask].copy()
+
+for col in ['ManuscriptSampleSize', 'SRASampleSize']:
+    df[col] = df[col].clip(lower=0, upper=500)
+
+counts = df.groupby('DiseaseGroup').size().sort_index()
+keep = counts[counts >= 25].index.tolist()
+df = df[df['DiseaseGroup'].isin(keep)].copy()
+
+print("Diseases included (>=25 studies):", keep)
+print("Total rows retained:", len(df))
+
+palette = sns.color_palette("colorblind", n_colors=len(keep))
+color_map = dict(zip(keep, palette))
+
+n = len(keep)
+fig, axes = plt.subplots(
+    nrows=n, ncols=1, figsize=(10, 2.6*n),
+    sharex=True, sharey=False, constrained_layout=True
+)
+
+if n == 1:
+    axes = [axes]
+
+for ax, disease in zip(axes, keep):
+    sub = df[df['DiseaseGroup'] == disease]
+    c = color_map[disease]
+
+    m = sub['ManuscriptSampleSize'].dropna()
+    m = m[m > 0]
+    if len(m) >= 2:
+        sns.kdeplot(x=m, ax=ax, color=c, lw=2, fill=False, label="Manuscript", bw_adjust=0.9)
+
+    s = sub['SRASampleSize'].dropna()
+    s = s[s > 0]
+    if len(s) >= 2:
+        sns.kdeplot(x=s, ax=ax, color=c, lw=2, fill=False, linestyle='--', label="SRA", bw_adjust=0.9)
+
+    ax.set_title(f"{disease} (n={len(sub)})", loc='left', fontsize=11, pad=2)
+    ax.set_xlim(0, 500)
+    ax.set_ylim(0, 0.006)
+    ax.set_ylabel("Density")
+
+    if ax is axes[0]:
+        ax.legend(title="Source", loc='upper right', frameon=True)
+    else:
+        ax.legend_.remove() if ax.get_legend() else None
+
+axes[-1].set_xlabel("Sample Size")
+
+disease_handles = [Patch(facecolor=color_map[d], edgecolor=color_map[d], label=d) for d in keep]
+global_legend = fig.legend(
+    handles=disease_handles, title="Disease Group",
+    loc='center left', bbox_to_anchor=(1.02, 0.5), frameon=True
+)
+
+plt.suptitle(
+    "Density of Manuscript vs SRA Sample Sizes by Disease Group from the MMC Dataset\n(Only diseases with ≥25 studies; axis capped at 500)",
+    y=1.02, fontsize=14
+)
+
+plt.tight_layout()
+plt.show()
+
+fig.savefig("stacked_density_by_disease_linear_0to500.pdf", dpi=300, bbox_inches="tight")
+
+from google.colab import files
+files.download("stacked_density_by_disease_linear_0to500.pdf")
