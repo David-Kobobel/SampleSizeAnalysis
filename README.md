@@ -2,7 +2,7 @@
 # Code for Kobobel et al. (in prog) "Assessing the Clarity of Sample Size Reporting in Clinical Cancer Microbiome Research"
 **This project analyzes the standardization and reporting clarity of biological sample size in research articles pertaining to the cancer microbiome in human subjects.**
 
-Code for Density Plot Generation (Fig. 2A) can be found in the **Density Plot** file
+Code for Density Plot Generation (Fig. 2A) can be found in the **Density Plots** file
 
 Code for Inter-Rater Reliability Dataset to extract 15 random studies can be found in the **IRR Dataset** file
 
