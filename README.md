@@ -1,7 +1,6 @@
 # SampleSizeAnalysis
 # Code for Kobobel et al. (in prog) "Assessing the Clarity of Sample Size Reporting in Clinical Cancer Microbiome Research"
-# This project analyzes the standardization and reporting clarity of biological sample size in research articles pertaining to the cancer microbiome in human subjects.
-Code for projected entitled: Assessing the Clarity of Sample Size Reporting in Clinical Cancer Microbiome Research 
+**This project analyzes the standardization and reporting clarity of biological sample size in research articles pertaining to the cancer microbiome in human subjects.**
 
 Code for Density Plot Generation (Fig. 2A) can be found in the **Density Plot** folder
 
