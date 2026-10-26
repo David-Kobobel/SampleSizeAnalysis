@@ -1,0 +1,68 @@
+study,doi,year,journal,jif,seq_type,low_biomass,participant_n,final_sample_n,batch_effects,sequencing_depth,sequences_after_qc,read_normalization,negative_controls,positive_controls,contaminant_removal,taxa_removal
+Abbas 2022,10.1186/s13099-021-00477-7,2022,Gut Pathogens,4.0,16S,0,1,1,0,0,0,0,1,0,1,1
+Björk 2024,10.1038/s41591-024-02803-3,2024,Nature Medicine,50.0,Shotgun,0,1,1,0,1,0,1,0,0,0,0
+Boban 2025,10.3389/fcimb.2025.1479795,2025,Frontiers in Cellular and Infection Microbiology,4.8,16S,1,1,1,0,1,1,1,1,0,0,0
+Cascone 2023,10.1038/s41591-022-02189-0,2023,Nature Medicine,50.0,16S,0,1,1,0,0,0,0,0,0,0,0
+Chai 2022,10.1080/19490976.2022.2156255,2022,Gut Microbes,11.0,16S,1,1,1,0,0,1,0,1,0,1,0
+Chen 2022,10.3389/fimmu.2022.827953,2022,Frontiers in Immunology,5.9,16S,1,1,1,0,0,0,0,0,0,0,0
+Cheng 2025,10.3389/fimmu.2025.1589843,2025,Frontiers in Immunology,5.9,16S,1,1,1,0,0,0,0,0,0,0,0
+Colbert 2023,10.1016/j.ccell.2023.09.012,2023,Cancer Cell,44.5,Both,0,1,1,1,0,0,0,0,0,0,1
+Davar 2021,10.1126/science.abf3363,2021,Science,45.8,Shotgun,0,1,1,0,0,0,0,0,0,0,0
+Deng 2024,10.3389/fimmu.2024.1482084,2024,Frontiers in Immunology,5.9,16S,1,1,1,0,0,0,0,0,0,0,0
+Dumont-Leblond 2021,10.1038/s42003-021-01690-5,2021,Communications Biology,5.1,16S,1,1,1,0,0,0,0,1,1,1,0
+Fang 2022,10.3389/fonc.2022.837525,2022,Frontiers in Oncology,3.3,Both,0,1,1,0,1,0,0,0,0,0,0
+Feng K 2024,10.1111/1759-7714.15280,2024,Thoracic Cancer,2.3,16S,1,1,1,0,0,0,0,0,0,0,0
+Feng Q 2015,10.1038/ncomms7528,2015,Zeitschrift für Gastroenterologie,1.6,Shotgun,0,1,1,0,0,1,0,0,0,0,0
+Frankel 2017,10.1016/j.neo.2017.08.004,2017,Neoplasia,7.7,Shotgun,0,1,1,0,1,0,0,0,0,0,1
+Galeano Niño 2022,10.1038/s41586-022-05435-0,2022,Nature,48.5,Both,1,1,1,0,0,0,0,0,0,0,0
+Govorov 2025,10.3389/fmed.2025.1533344,2025,Frontiers in Medicine,3.0,16S,1,1,1,0,0,0,0,0,0,0,0
+Guo 2025,10.3389/fcimb.2025.1574511,2025,Frontiers in Cellular and Infection Microbiology,4.8,16S,1,1,1,0,0,0,1,1,0,0,0
+Jiang 2021,10.3389/fcimb.2021.774453,2021,Frontiers in Cellular and Infection Microbiology,4.8,Both,1,1,1,0,1,1,0,0,0,0,0
+Jimenez 2025,10.1038/s41522-025-00690-1,2025,npj Biofilms and Microbiomes,9.2,Both,0,1,1,0,1,1,1,1,0,0,1
+Kartal 2022,10.1136/gutjnl-2021-324755,2022,Gut,25.8,Both,0,1,1,1,1,0,0,1,0,1,0
+Khan 2023,10.3389/fmicb.2023.1275374,2023,Frontiers in Microbiology,4.5,16S,1,0,0,0,0,0,0,0,0,0,0
+Kim 2025,10.4143/crt.2024.382,2025,Cancer Research and Treatment,3.8,16S,0,1,1,0,0,0,1,0,0,0,1
+Lam 2021,10.1186/s12866-021-02359-z,2021,BMC Microbiology,4.2,16S,1,0,1,0,0,0,0,1,1,1,0
+Lin 2025,10.1016/j.chom.2025.03.012,2025,Cell Host & Microbe,18.7,Both,0,1,1,1,0,0,0,0,0,0,0
+Liu 2022,10.1038/s41564-021-01030-7,2022,Nature Microbiology,19.4,Shotgun,0,1,1,1,1,0,0,0,0,1,1
+Ma 2024,10.1080/21645515.2024.2430087,2024,Human Vaccines & Immunotherapeutics,3.5,Shotgun,0,1,1,0,0,0,0,0,0,0,1
+McCune 2024,10.1128/msystems.01237-24,2024,mSystems,4.6,16S,0,1,1,0,0,1,0,0,0,0,0
+Merali 2023,10.3390/ijms242316888,2023,HPB,2.4,16S,1,1,1,0,0,0,0,1,1,0,0
+Min 2024,10.3390/ijms252011157,2024,International Journal of Molecular Sciences,4.9,16S,1,1,1,0,1,0,0,0,0,1,0
+Mitra 2021,10.1186/s13073-021-00977-w,2021,Genome Medicine,11.2,16S,1,1,1,0,1,0,1,0,0,0,0
+Mäkinen 2023,10.1186/s40168-023-01613-y,2023,Microbiome,12.7,16S,1,1,1,0,0,0,1,1,0,0,0
+Nagata 2022,10.1053/j.gastro.2022.03.054,2022,Gastroenterology,25.1,Both,0,1,1,0,0,0,0,0,0,0,0
+Peng 2020,10.1158/2326-6066.cir-19-1014,2020,Cancer Immunology Research,8.2,Both,0,1,1,1,1,0,0,0,0,0,0
+Piccinno 2025,10.1038/s41591-025-03693-9,2025,Nature Medicine,50.0,Shotgun,0,1,1,1,0,1,0,0,0,0,1
+Pragman 2024,10.1186/s12931-024-02750-0,2024,Respiratory Research,5.0,16S,1,1,0,0,0,0,0,1,0,1,0
+Queen 2025,10.1038/s41522-025-00717-7,2025,npj Biofilms and Microbiomes,9.2,16S,1,1,1,1,0,0,1,0,0,0,1
+Raychaudhuri 2025,10.1038/s41522-025-00725-7,2025,npj Biofilms and Microbiomes,9.2,Both,0,1,1,1,0,1,0,1,1,0,0
+Salava 2020,10.1016/j.jid.2020.03.951,2020,Journal of Investigative Dermatology,5.7,Both,1,1,1,0,0,0,0,0,0,0,0
+Sarkar 2023,10.14740/wjon1587,2023,World Journal of Oncology,2.2,16S,0,1,1,0,0,0,1,1,1,0,0
+Schmidt 2014,10.1371/journal.pone.0098741,2014,PLOS ONE,2.6,16S,1,0,1,0,1,1,1,0,0,0,0
+Serrano-Villar 2023,10.1038/s41591-023-02407-3,2023,Nature Medicine,50.0,16S,1,1,1,0,0,0,1,0,0,0,0
+Shaikh 2024,10.3390/cancers16213644,2024,Cancers,4.4,16S,0,1,1,0,0,0,0,0,0,0,0
+Shi 2021,10.3389/fcimb.2021.686595,2021,Frontiers in Cellular and Infection Microbiology,4.8,16S,1,1,1,0,0,0,0,0,0,0,0
+Simpson 2022,10.1038/s41591-022-01965-2,2022,Nature Medicine,50.0,Both,0,1,1,0,1,0,0,1,0,0,0
+Sun 2023,10.1128/spectrum.00314-23,2023,Microbiology Spectrum,3.8,16S,1,1,1,0,0,0,0,0,0,0,0
+Takenaka 2022,10.3389/fonc.2022.809441,2022,Frontiers in Oncology,3.3,Both,1,1,1,0,0,1,0,0,0,0,0
+Tesolato 2023,10.1371/journal.pone.0292551,2023,PLOS ONE,2.6,16S,0,1,1,0,1,0,0,0,0,0,0
+Thomas 2019,10.1038/s41591-019-0405-7,2019,Nature Medicine,50.0,Both,0,1,1,1,1,0,1,0,0,0,0
+Tortelli 2025,10.1172/jci.insight.176839,2025,JCI Insight,6.1,16S,1,1,1,0,0,1,1,1,0,0,0
+Vogtmann 2016,10.1371/journal.pone.0155362,2016,PLOS ONE,2.6,Shotgun,0,1,1,0,1,0,1,0,0,0,0
+Voigt 2022,10.1016/j.jid.2022.03.017,2022,Journal of Investigative Dermatology,5.7,Shotgun,1,1,1,0,0,0,0,1,1,0,0
+Walther-António 2016,10.1186/s13073-016-0368-y,2016,Genome Medicine,11.2,16S,1,1,1,0,0,1,0,1,0,0,0
+Wang F 2021,10.1016/j.xcrm.2021.100383,2021,Cell Reports Medicine,10.6,16S,0,1,1,0,0,0,0,0,0,0,0
+Wang L 2022,10.1097/gme.0000000000002053,2022,Menopause,3.0,16S,1,1,1,0,1,1,0,1,0,0,0
+Wei 2025,10.3389/fimmu.2025.1572152,2025,Frontiers in Immunology,5.9,16S,1,1,1,0,0,0,0,0,0,0,0
+Wu 2024,10.1186/s12967-024-05446-7,2024,Journal of Translational Medicine,7.5,16S,1,1,1,1,0,0,0,0,0,0,0
+Xia 2022,10.3389/fcimb.2022.1024867,2022,Frontiers in Cellular and Infection Microbiology,4.8,16S,1,1,1,0,0,1,0,1,0,0,0
+Yan 2020,10.1016/j.chom.2020.03.005,2020,Cell Host & Microbe,18.7,Both,0,1,1,0,1,0,0,0,0,0,0
+Yang 2021,10.1038/s41467-021-27112-y,2021,Nature Communications,15.7,Both,0,1,1,0,0,1,0,0,0,0,0
+Yang 2022,10.1002/ijc.33847,2022,International Journal of Cancer,4.7,Shotgun,1,1,1,1,1,1,1,0,0,0,1
+Yang K 2024,10.3389/fcimb.2024.1397989,2024,Frontiers in Cellular and Infection Microbiology,4.8,16S,1,1,1,0,1,0,0,0,0,0,0
+Yu 2017,10.1136/gutjnl-2015-309800,2017,Gut,25.8,16S,0,1,1,0,1,0,0,0,0,0,0
+Zeller 2014,10.15252/msb.20145645,2014,Molecular Systems Biology,7.7,Both,0,1,1,0,1,0,1,0,0,0,0
+Zhang 2023,10.3389/fcimb.2023.1261284,2023,Frontiers in Cellular and Infection Microbiology,4.8,Shotgun,1,1,1,0,1,0,0,0,0,0,0
+Zheng 2021,10.1038/s41598-021-91195-2,2021,Scientific Reports,3.9,Shotgun,1,1,1,0,1,0,0,0,0,0,1
+Žukauskaitė 2024,10.1093/bjs/znae213,2024,British Journal of Surgery,8.8,16S,0,1,1,0,0,1,1,1,0,1,1
