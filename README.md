@@ -1,6 +1,6 @@
 # SampleSizeAnalysis
 
-Code and data to reproduce the results in Kobobel, Degregori et al., *Beyond the headcount: sparse reporting of sequencing and quality-control methods in cancer microbiome studies* (Access Microbiology).
+Code and data to reproduce the results in Kobobel, Degregori et al., *From enrollment to sequencing: cancer microbiome methods reporting is inconsistent and incomplete* (Access Microbiology).
 
 ## Setup
 
